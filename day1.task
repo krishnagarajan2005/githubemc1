@@ -1,0 +1,104 @@
+Print your name, department, and college in 3 lines.
+Declare all data types and print their values.
+Write a program using typedef.
+Create an enum for months and print any value.
+Write a program using unsigned and long qualifiers.
+Write a program to find the area of a circle.
+Write a program to swap two numbers using a temporary variable.
+Write a program to calculate simple interest.
+Write a program to convert Celsius to Fahrenheit.
+Write a program to print ASCII value of a character.
+
+Program 1 — Print your name, department, and college
+#include <stdio.h>
+int main() {
+    printf("Saravanan
+Computer Science
+ABC College");
+    return 0;
+}
+Program 2 — Declare all data types and print values
+#include <stdio.h>
+int main() {
+    int a = 10;
+    float b = 5.5;
+    char c = 'A';
+    double d = 20.1234;
+
+    printf("int = %", a);
+    printf("float = %.2f", b);
+    printf("char = %c", c);
+    printf("double = %.4f", d);
+    return 0;
+}
+Program 3 — typedef Example
+#include <stdio.h>
+typedef int marks;
+int main() {
+    marks m1 = 95;
+    printf("Marks = %d", m1);
+    return 0;
+}
+Program 4 — Enum for months
+#include <stdio.h>
+enum months {JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
+int main() {
+    enum months m = MAR;
+    printf("Month value = %d", m);
+    return 0;
+}
+Program 5 — Unsigned and Long Qualifiers
+#include <stdio.h>
+int main() {
+    unsigned int a = 20;
+    long int b = 99999;
+
+    printf("Unsigned = %u", a);
+    printf("Long = %ld", b);
+    return 0;
+}
+
+
+
+Program 6 — Area of a Circle
+#include <stdio.h>
+int main() {
+    float r, area;
+    r = 5;
+    area = 3.14 * r * r;
+    printf("Area = %.2f", area);
+    return 0;
+}
+Program 7 — Swap Two Numbers (Temporary Variable)
+#include <stdio.h>
+int main() {
+    int a = 10, b = 20, temp;
+    temp = a;
+    a = b;
+    b = temp;
+    printf("a = %d, b = %d", a, b);
+    return 0;
+}
+Program 8 — Simple Interest
+#include <stdio.h>
+int main() {
+    float p = 1000, r = 5, t = 2, si;
+    si = (p * r * t) / 100;
+    printf("Simple Interest = %.2f", si);
+    return 0;
+}
+Program 9 — Celsius to Fahrenheit
+#include <stdio.h>
+int main() {
+    float c = 37, f;
+    f = (c * 9 / 5) + 32;
+    printf("Fahrenheit = %.2f", f);
+    return 0;
+}
+Program 10 — ASCII Value of a Character
+#include <stdio.h>
+int main() {
+    char ch = 'A';
+    printf("ASCII value of %c = %d", ch, ch);
+    return 0;
+}
