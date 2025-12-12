@@ -1,0 +1,271 @@
+Write a program to add two numbers.
+Write a program to subtract two numbers.
+Write a program to multiply two numbers.
+Write a program to divide two numbers.
+Write a program to find the remainder of division.
+Write a program to compare two numbers using relational operators.
+Write a program to demonstrate logical operators.
+Write a program to demonstrate unary increment and decrement.
+Write a program using shorthand operator.
+Write a program using ternary operator to find the largest number.
+Write a program to check whether a number is positive or negative.
+Write a program to check whether a number is even or odd.
+Write a program to find the biggest of two numbers.
+Write a program to find the biggest of three numbers.
+Write a program to check vowel or consonant using switch.
+Write a program to make a simple calculator using switch.
+Write a program to print day name using switch.
+Write a program to print grade using nested if.
+Write a program to check eligibility to vote.
+Write a program to check leap year using if-else.
+
+
+
+
+
+
+
+
+Program 1 — Arithmetic Operations
+#include <stdio.h>
+int main() {
+    int a = 20, b = 10;
+    printf("Add = %d
+", a + b);
+    printf("Sub = %d
+", a - b);
+    printf("Mul = %d
+", a * b);
+    printf("Div = %d
+", a / b);
+    printf("Mod = %d
+", a % b);
+    return 0;
+}
+
+Program 2 — Biggest of Two Numbers (Ternary)
+#include <stdio.h>
+int main() {
+    int a = 10, b = 20;
+    int big = (a > b) ? a : b;
+    printf("Biggest = %d", big);
+    return 0;
+}
+
+Program 3 — Biggest of Three Numbers
+#include <stdio.h>
+int main() {
+    int a = 10, b = 20, c = 15;
+    if(a > b) {
+        if(a > c)
+            printf("A is biggest");
+        else
+            printf("C is biggest");
+    }
+    else {
+        if(b > c)
+            printf("B is biggest");
+        else
+            printf("C is biggest");
+    }
+    return 0;
+}
+Program 4 — Calculator Using Switch
+#include <stdio.h>
+int main() {
+    int a = 10, b = 5, ch = 3;
+    switch(ch) {
+        case 1: printf("Add = %d", a + b); break;
+        case 2: printf("Sub = %d", a - b); break;
+        case 3: printf("Mul = %d", a * b); break;
+        case 4: printf("Div = %d", a / b); break;
+        default: printf("Invalid Choice");
+    }
+    return 0;
+}
+
+Program 5 — Positive or Negative
+#include <stdio.h>
+int main() {
+    int n = -5;
+    if(n > 0)
+        printf("Positive");
+    else
+        printf("Negative");
+    return 0;
+}
+
+Program 6 — Leap Year Check
+#include <stdio.h>
+int main() {
+    int year = 2024;
+    if(year % 4 == 0) {
+        if(year % 100 == 0) {
+            if(year % 400 == 0)
+                printf("Leap Year");
+            else
+                printf("Not Leap Year");
+        }
+        else
+            printf("Leap Year");
+    }
+    else
+        printf("Not Leap Year");
+    return 0;
+}
+## **Program 7 — Even or Odd**
+```c
+#include <stdio.h>
+int main() {
+    int n = 7;
+    if(n % 2 == 0)
+        printf("Even");
+    else
+        printf("Odd");
+    return 0;
+}
+Program 8 — Relational Operators Demo
+#include <stdio.h>
+int main() {
+    int a = 10, b = 20;
+    printf("a > b = %d
+", a > b);
+    printf("a < b = %d
+", a < b);
+    printf("a == b = %d
+", a == b);
+    return 0;
+}
+Program 9 — Logical Operators Demo
+#include <stdio.h>
+int main() {
+    int a = 5, b = 0;
+    printf("AND = %d
+", a && b);
+    printf("OR = %d
+", a || b);
+    printf("NOT a = %d", !a);
+    return 0;
+}
+Program 10 — Unary Operator Demo
+#include <stdio.h>
+int main() {
+    int a = 10;
+    printf("a++ = %d
+", a++);
+    printf("++a = %d", ++a);
+    return 0;
+}
+Program 11 — Shorthand Operator
+#include <stdio.h>
+int main() {
+    int a = 10;
+    a += 5;
+    printf("a = %d", a);
+    return 0;
+}
+Program 12 — Ternary Operator (Smallest Number)
+#include <stdio.h>
+int main() {
+    int a = 5, b = 10;
+    int small = (a < b) ? a : b;
+    printf("Smallest = %d", small);
+    return 0;
+}
+Program 13 — Vowel or Consonant Using Switch
+#include <stdio.h>
+int main() {
+    char ch = 'a';
+    switch(ch) {
+        case 'a': case 'e': case 'i': case 'o': case 'u':
+        case 'A': case 'E': case 'I': case 'O': case 'U':
+            printf("Vowel");
+            break;
+        default:
+            printf("Consonant");
+    }
+    return 0;
+}
+Program 14 — Day Name Using Switch
+#include <stdio.h>
+int main() {
+    int d = 3;
+    switch(d) {
+        case 1: printf("Sunday"); break;
+        case 2: printf("Monday"); break;
+        case 3: printf("Tuesday"); break;
+        case 4: printf("Wednesday"); break;
+        case 5: printf("Thursday"); break;
+        case 6: printf("Friday"); break;
+        case 7: printf("Saturday"); break;
+        default: printf("Invalid day");
+    }
+    return 0;
+}
+Program 15 — Grade Using Nested If
+#include <stdio.h>
+int main() {
+    int m = 85;
+    if(m >= 90)
+        printf("Grade A");
+    else if(m >= 75)
+        printf("Grade B");
+    else if(m >= 50)
+        printf("Grade C");
+    else
+        printf("Fail");
+    return 0;
+}
+Program 16 — Eligibility to Vote
+#include <stdio.h>
+int main() {
+    int age = 17;
+    if(age >= 18)
+        printf("Eligible to Vote");
+    else
+        printf("Not Eligible");
+    return 0;
+}
+Program 17 — Bitwise Operator Demo
+#include <stdio.h>
+int main() {
+    int a = 5, b = 3;
+    printf("AND = %d
+", a & b);
+    printf("OR = %d
+", a | b);
+    printf("XOR = %d", a ^ b);
+    return 0;
+}
+Program 18 — Find Maximum Using If-Else
+#include <stdio.h>
+int main() {
+    int a = 15, b = 25;
+    if(a > b)
+        printf("A is Maximum");
+    else
+        printf("B is Maximum");
+    return 0;
+}
+Program 19 — Check Number is Zero, Positive or Negative
+#include <stdio.h>
+int main() {
+    int n = 0;
+    if(n > 0)
+        printf("Positive");
+    else if(n < 0)
+        printf("Negative");
+    else
+        printf("Zero");
+    return 0;
+}
+Program 20 — Simple Menu Using Switch
+#include <stdio.h>
+int main() {
+    int choice = 1;
+    switch(choice) {
+        case 1: printf("Start"); break;
+        case 2: printf("Stop"); break;
+        case 3: printf("Pause"); break;
+        default: printf("Invalid Option");
+    }
