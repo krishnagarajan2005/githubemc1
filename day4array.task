@@ -1,0 +1,66 @@
+1.1 Function Call by Passing Value
+
+#include <stdio.h>
+void add(int a, int b) {
+    int sum = a + b;
+    printf("Sum = %d\n", sum);
+}
+int main() {
+    int x=5, y=10;
+    add(x, y);
+    return 0;
+}
+1.2 Function Call by Returning Value
+
+#include <stdio.h>
+int add(int a,int b) { return a+b; }
+int main() {
+    int sum = add(5,10);
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+1.3 Function Call by Passing and Returning Value
+
+#include <stdio.h>
+int multiply(int a,int b) { return a*b; }
+int main() {
+    int result = multiply(5,10);
+    printf("Multiplication = %d\n", result);
+    return 0;
+}
+1.4 Recursion Example
+
+#include <stdio.h>
+int factorial(int n) { 
+    if(n==0 || n==1) return 1;
+    return n*factorial(n-1);
+}
+int main() {
+    printf("Factorial = %d\n", factorial(5));
+    return 0;
+}
+
+2. Arrays in C
+2.1 One Dimensional Array
+
+#include <stdio.h>
+int main() {
+    int arr[5] = {10,20,30,40,50};
+    for(int i=0;i<5;i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
+
+2.2 Two Dimensional Array
+
+#include <stdio.h>
+int main() {
+    int arr[2][3] = {{1,2,3},{4,5,6}};
+    for(int i=0;i<2;i++){
+        for(int j=0;j<3;j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
+
