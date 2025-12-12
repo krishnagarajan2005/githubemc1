@@ -1,0 +1,277 @@
+#include <stdio.h>
+#include <math.h>
+
+// Program 1 – Print numbers 1 to 10 (while)
+void program1() {
+    int i = 1;
+    while(i <= 10) {
+        printf("%d ", i);
+        i++;
+    }
+    printf("\n");
+}
+
+// Program 2 – Print numbers 1 to 10 (for)
+void program2() {
+    for(int i = 1; i <= 10; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+}
+
+// Program 3 – Print numbers 1 to 10 (do-while)
+void program3() {
+    int i = 1;
+    do {
+        printf("%d ", i);
+        i++;
+    } while(i <= 10);
+    printf("\n");
+}
+
+// Program 4 – Even numbers 1-20
+void program4() {
+    for(int i = 2; i <= 20; i+=2)
+        printf("%d ", i);
+    printf("\n");
+}
+
+// Program 5 – Odd numbers 1-20
+void program5() {
+    for(int i = 1; i <= 20; i+=2)
+        printf("%d ", i);
+    printf("\n");
+}
+
+// Program 6 – Sum of first n numbers
+void program6() {
+    int n, sum=0;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++)
+        sum += i;
+    printf("Sum = %d\n", sum);
+}
+
+// Program 7 – Factorial of a number
+void program7() {
+    int n, fact=1;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++)
+        fact *= i;
+    printf("Factorial = %d\n", fact);
+}
+
+// Program 8 – Reverse a number
+void program8() {
+    int n, rev=0, rem;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    int temp = n;
+    while(temp != 0) {
+        rem = temp % 10;
+        rev = rev*10 + rem;
+        temp /= 10;
+    }
+    printf("Reverse = %d\n", rev);
+}
+
+// Program 9 – Check palindrome number
+void program9() {
+    int n, rev=0, rem;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    int temp = n;
+    while(temp != 0) {
+        rem = temp % 10;
+        rev = rev*10 + rem;
+        temp /= 10;
+    }
+    if(n == rev)
+        printf("Palindrome\n");
+    else
+        printf("Not Palindrome\n");
+}
+
+// Program 10 – Print multiplication table
+void program10() {
+    int n;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    for(int i=1;i<=10;i++)
+        printf("%d x %d = %d\n", n, i, n*i);
+}
+
+// Program 11 – Sum of digits
+void program11() {
+    int n, sum=0, rem;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    while(n != 0) {
+        rem = n % 10;
+        sum += rem;
+        n /= 10;
+    }
+    printf("Sum of digits = %d\n", sum);
+}
+
+// Program 12 – Count digits
+void program12() {
+    int n, count=0;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    int temp = n;
+    while(temp != 0) {
+        temp /= 10;
+        count++;
+    }
+    printf("Digits = %d\n", count);
+}
+
+// Program 13 – Fibonacci series
+void program13() {
+    int n, t1=0, t2=1, next;
+    printf("Enter terms: ");
+    scanf("%d", &n);
+    for(int i=1;i<=n;i++) {
+        printf("%d ", t1);
+        next = t1 + t2;
+        t1 = t2;
+        t2 = next;
+    }
+    printf("\n");
+}
+
+// Program 14 – Check prime number
+void program14() {
+    int n, flag=0;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    for(int i=2;i<=sqrt(n);i++) {
+        if(n%i==0) {
+            flag=1;
+            break;
+        }
+    }
+    if(n>1 && flag==0)
+        printf("Prime\n");
+    else
+        printf("Not Prime\n");
+}
+
+// Program 15 – Print prime numbers in range
+void program15() {
+    int a,b;
+    printf("Enter range: ");
+    scanf("%d %d", &a, &b);
+    for(int n=a;n<=b;n++) {
+        int flag=0;
+        if(n<2) continue;
+        for(int i=2;i<=sqrt(n);i++) {
+            if(n%i==0) {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0) printf("%d ", n);
+    }
+    printf("\n");
+}
+
+// Program 16 – Largest in array
+void program16() {
+    int n;
+    printf("Enter array size: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    int max = arr[0];
+    for(int i=1;i<n;i++)
+        if(arr[i]>max) max=arr[i];
+    printf("Largest = %d\n", max);
+}
+
+// Program 17 – Smallest in array
+void program17() {
+    int n;
+    printf("Enter array size: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    int min = arr[0];
+    for(int i=1;i<n;i++)
+        if(arr[i]<min) min=arr[i];
+    printf("Smallest = %d\n", min);
+}
+
+// Program 18 – Sum of array elements
+void program18() {
+    int n, sum=0;
+    printf("Enter array size: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(int i=0;i<n;i++) {
+        scanf("%d",&arr[i]);
+        sum += arr[i];
+    }
+    printf("Sum = %d\n", sum);
+}
+
+// Program 19 – Reverse array
+void program19() {
+    int n;
+    printf("Enter array size: ");
+    scanf("%d", &n);
+    int arr[n];
+    for(int i=0;i<n;i++) scanf("%d",&arr[i]);
+    printf("Reversed array: ");
+    for(int i=n-1;i>=0;i--) printf("%d ", arr[i]);
+    printf("\n");
+}
+
+// Program 20 – Menu driven program using loop & switch
+void program20() {
+    int choice, a, b;
+    do {
+        printf("Menu:\n1-Add 2-Sub 3-Mul 4-Div 5-Exit\n");
+        scanf("%d",&choice);
+        if(choice>=1 && choice<=4) {
+            printf("Enter a and b: ");
+            scanf("%d %d",&a,&b);
+        }
+        switch(choice) {
+            case 1: printf("Sum=%d\n", a+b); break;
+            case 2: printf("Sub=%d\n", a-b); break;
+            case 3: printf("Mul=%d\n", a*b); break;
+            case 4: if(b!=0) printf("Div=%d\n", a/b); else printf("Cannot divide by zero\n"); break;
+            case 5: printf("Exit\n"); break;
+            default: printf("Invalid\n");
+        }
+    } while(choice != 5);
+}
+
+// Main function to run all programs
+int main() {
+    // program1();
+    // program2();
+    // program3();
+    // program4();
+    // program5();
+    // program6();
+    // program7();
+    // program8();
+    // program9();
+    // program10();
+    // program11();
+    // program12();
+    // program13();
+    // program14();
+    // program15();
+    // program16();
+    // program17();
+    // program18();
+    // program19();
+    // program20();
+    return 0;
+}
