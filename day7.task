@@ -1,0 +1,126 @@
+#include <stdio.h>
+#include <string.h>
+
+// ---------- Program 1: Create a structure and print ----------
+struct Student {
+    int id;
+    char name[20];
+    float marks;
+};
+void program1() {
+    struct Student s1 = {1, "Saravanan", 95.5};
+    printf("Program 1 - Student info: ID=%d, Name=%s, Marks=%.2f\n", s1.id, s1.name, s1.marks);
+}
+
+// ---------- Program 2: Array of structures ----------
+void program2() {
+    struct Student s[3] = {
+        {1, "Alice", 80.5},
+        {2, "Bob", 85.0},
+        {3, "Charlie", 90.0}
+    };
+    printf("Program 2 - Array of Students:\n");
+    for(int i=0;i<3;i++)
+        printf("ID=%d, Name=%s, Marks=%.2f\n", s[i].id, s[i].name, s[i].marks);
+}
+
+// ---------- Program 3: Structure with array ----------
+struct StudentMarks {
+    int id;
+    char name[20];
+    float marks[3];
+};
+void program3() {
+    struct StudentMarks s1 = {1, "Saravanan", {85.5, 90.0, 78.5}};
+    printf("Program 3 - Student Marks:\n");
+    printf("ID=%d, Name=%s, Marks: ", s1.id, s1.name);
+    for(int i=0;i<3;i++)
+        printf("%.2f ", s1.marks[i]);
+    printf("\n");
+}
+
+// ---------- Program 4: Pointer to structure ----------
+void program4() {
+    struct Student s1 = {1, "Saravanan", 95.5};
+    struct Student *ptr = &s1;
+    printf("Program 4 - Pointer to structure: Name=%s, Marks=%.2f\n", ptr->name, ptr->marks);
+}
+
+// ---------- Program 5: Union ----------
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+void program5() {
+    union Data d;
+    d.i = 10;
+    printf("Program 5 - Union int = %d\n", d.i);
+    d.f = 3.14;
+    printf("Program 5 - Union float = %.2f\n", d.f);
+    strcpy(d.str, "Hello");
+    printf("Program 5 - Union string = %s\n", d.str);
+}
+
+// ---------- Program 6: Structure vs Union memory ----------
+void program6() {
+    struct Student s1 = {1, "Saravanan", 95.5};
+    union Data u1;
+    printf("Program 6 - Size of structure = %lu\n", sizeof(s1));
+    printf("Program 6 - Size of union = %lu\n", sizeof(u1));
+}
+
+// ---------- Program 7: Sum array elements in structure ----------
+void program7() {
+    struct StudentMarks s1 = {1, "Saravanan", {85.5, 90.0, 78.5}};
+    float sum = 0;
+    for(int i=0;i<3;i++)
+        sum += s1.marks[i];
+    printf("Program 7 - Sum of marks = %.2f\n", sum);
+}
+
+// ---------- Program 8: Largest marks in structure ----------
+void program8() {
+    struct StudentMarks s1 = {1, "Saravanan", {85.5, 90.0, 78.5}};
+    float max = s1.marks[0];
+    for(int i=1;i<3;i++)
+        if(s1.marks[i]>max) max = s1.marks[i];
+    printf("Program 8 - Largest mark = %.2f\n", max);
+}
+
+// ---------- Program 9: Swap two structures ----------
+void program9() {
+    struct Student s1 = {1, "Alice", 80.0};
+    struct Student s2 = {2, "Bob", 90.0};
+    struct Student temp;
+    temp = s1;
+    s1 = s2;
+    s2 = temp;
+    printf("Program 9 - After swap:\n");
+    printf("Student1: ID=%d, Name=%s, Marks=%.2f\n", s1.id, s1.name, s1.marks);
+    printf("Student2: ID=%d, Name=%s, Marks=%.2f\n", s2.id, s2.name, s2.marks);
+}
+
+// ---------- Program 10: Pointer arithmetic with array ----------
+void program10() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr = arr;
+    printf("Program 10 - Array elements using pointer arithmetic: ");
+    for(int i=0;i<5;i++)
+        printf("%d ", *(ptr+i));
+    printf("\n");
+}
+
+int main() {
+    program1();
+    program2();
+    program3();
+    program4();
+    program5();
+    program6();
+    program7();
+    program8();
+    program9();
+    program10();
+    return 0;
+}
