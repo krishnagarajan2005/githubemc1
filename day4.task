@@ -1,0 +1,135 @@
+#include <stdio.h>
+
+// ---------- Program 1: Add two numbers ----------
+void program1_add() {
+    int a = 5, b = 10;
+    printf("Program 1 - Sum = %d\n", a + b);
+}
+
+// ---------- Program 2: Multiply two numbers ----------
+int multiply(int a, int b) {
+    return a * b;
+}
+void program2_multiply() {
+    printf("Program 2 - Multiplication = %d\n", multiply(5, 10));
+}
+
+// ---------- Program 3: Recursive Factorial ----------
+int factorial(int n) {
+    if(n == 0 || n == 1) return 1;
+    return n * factorial(n-1);
+}
+void program3_factorial() {
+    printf("Program 3 - Factorial of 5 = %d\n", factorial(5));
+}
+
+// ---------- Program 4: Recursive Fibonacci ----------
+int fibonacci(int n) {
+    if(n==0) return 0;
+    if(n==1) return 1;
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+void program4_fibonacci() {
+    printf("Program 4 - Fibonacci first 10 terms: ");
+    for(int i=0;i<10;i++)
+        printf("%d ", fibonacci(i));
+    printf("\n");
+}
+
+// ---------- Program 5: Print Array Elements ----------
+void printArray(int arr[], int size) {
+    for(int i=0;i<size;i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+void program5_printArray() {
+    int arr[] = {1,2,3,4,5};
+    printf("Program 5 - Array elements: ");
+    printArray(arr, 5);
+}
+
+// ---------- Program 6: Sum of Array ----------
+int sumArray(int arr[], int size) {
+    int sum=0;
+    for(int i=0;i<size;i++)
+        sum += arr[i];
+    return sum;
+}
+void program6_sumArray() {
+    int arr[] = {1,2,3,4,5};
+    printf("Program 6 - Sum of array = %d\n", sumArray(arr,5));
+}
+
+// ---------- Program 7: Largest Element ----------
+int largestElement(int arr[], int size) {
+    int max = arr[0];
+    for(int i=1;i<size;i++)
+        if(arr[i]>max) max = arr[i];
+    return max;
+}
+void program7_largest() {
+    int arr[] = {1,2,3,4,5};
+    printf("Program 7 - Largest element = %d\n", largestElement(arr,5));
+}
+
+// ---------- Program 8: Smallest Element ----------
+int smallestElement(int arr[], int size) {
+    int min = arr[0];
+    for(int i=1;i<size;i++)
+        if(arr[i]<min) min = arr[i];
+    return min;
+}
+void program8_smallest() {
+    int arr[] = {1,2,3,4,5};
+    printf("Program 8 - Smallest element = %d\n", smallestElement(arr,5));
+}
+
+// ---------- Program 9: Add two 2D Arrays ----------
+void program9_add2D() {
+    int a[2][2]={{1,2},{3,4}};
+    int b[2][2]={{5,6},{7,8}};
+    int sum[2][2];
+    for(int i=0;i<2;i++){
+        for(int j=0;j<2;j++)
+            sum[i][j] = a[i][j] + b[i][j];
+    }
+    printf("Program 9 - Sum of 2D arrays:\n");
+    for(int i=0;i<2;i++){
+        for(int j=0;j<2;j++)
+            printf("%d ", sum[i][j]);
+        printf("\n");
+    }
+}
+
+// ---------- Program 10: Multiply two 2D Arrays ----------
+void program10_multiply2D() {
+    int a[2][3]={{1,2,3},{4,5,6}};
+    int b[3][2]={{7,8},{9,10},{11,12}};
+    int result[2][2] = {{0,0},{0,0}};
+    for(int i=0;i<2;i++){
+        for(int j=0;j<2;j++){
+            for(int k=0;k<3;k++)
+                result[i][j] += a[i][k]*b[k][j];
+        }
+    }
+    printf("Program 10 - Multiplication of 2D arrays:\n");
+    for(int i=0;i<2;i++){
+        for(int j=0;j<2;j++)
+            printf("%d ", result[i][j]);
+        printf("\n");
+    }
+}
+
+int main() {
+    program1_add();
+    program2_multiply();
+    program3_factorial();
+    program4_fibonacci();
+    program5_printArray();
+    program6_sumArray();
+    program7_largest();
+    program8_smallest();
+    program9_add2D();
+    program10_multiply2D();
+    return 0;
+}
